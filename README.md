@@ -9,14 +9,14 @@ The Minimal API project is designed to develop a lightweight and versatile API u
 - Uses Microsoft tools for efficient API development.
 
 ## Code Example:
-$
+    app.MapPost("/tasks", async (ToDoDbContext context, Item item) =>
+     {
+     context.Items.Add(item);
+     await context.SaveChangesAsync();
+     return Results.Created($"/tasks/{item.Id}", item);
+    });
 
-app.MapPost("/tasks", async (ToDoDbContext context, Item item) =>
-{
-    context.Items.Add(item);
-    await context.SaveChangesAsync();
-    return Results.Created($"/tasks/{item.Id}", item);
-});
+
 
 ## contact:
 For any questions or feedback, please feel free to contact via email at: s0556773361@gmail.com or contact us directly on 0556773361.
